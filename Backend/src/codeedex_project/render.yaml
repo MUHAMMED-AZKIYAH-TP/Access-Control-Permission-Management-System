@@ -2,7 +2,7 @@ services:
   - type: web
     name: codeedex-django
     env: python
-    rootDir: .
+    rootDir: Backend/src/codeedex_project
     plan: free
 
     buildCommand: |
@@ -12,8 +12,7 @@ services:
 
     startCommand: |
       python manage.py migrate --noinput
-      python run_superuser.py
-      gunicorn HMS_Django.wsgi:application
+      gunicorn codeedex_project.wsgi:application
     envVars:
       - key: ENV
         value: render
