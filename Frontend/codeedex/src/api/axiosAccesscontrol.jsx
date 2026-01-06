@@ -1,10 +1,7 @@
 import axios from "axios";
 
 
-const API_BASE_URL =
-    process.env.NODE_ENV === "development"
-        ? "http://127.0.0.1:8000/api/v1/access/"
-        : "https://access-control-permission-management-system.onrender.com/api/v1/access/"
+const API_BASE_URL = "https://access-control-permission-management-system.onrender.com/api/v1/access/"
 
 
 export const apiAccesscontrol = axios.create({
