@@ -1,3 +1,12 @@
+
+## Admin Details
+SUPERUSER_USERNAME=Codeedex.admin
+SUPERUSER_PASSWORD=123456Aa@
+
+
+
+
+
 # Codeedex
 
 Codeedex is a comprehensive user management and access control system built with Django REST Framework on the backend and React on the frontend. It provides role-based access control (RBAC), user authentication, team management, permissions management, and detailed audit logging for secure and efficient user administration.
@@ -224,7 +233,3 @@ Required permissions for actions:
 
 
 
-
-## Admin Details
-SUPERUSER_EMAIL=Codeedex@admin.in
-SUPERUSER_PASSWORD=123456Aa@
