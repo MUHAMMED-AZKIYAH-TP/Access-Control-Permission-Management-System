@@ -243,7 +243,7 @@ const Teams = () => {
                                                     </td>
                                                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                                         {editingTeam === team.id ? (
-                                                            <div className="flex space-x-3">
+                                                            <div className="flex space-x-3 justify-center">
                                                                 <button
                                                                     onClick={updateTeam}
                                                                     disabled={loading}
@@ -265,7 +265,7 @@ const Teams = () => {
                                                                 </button>
                                                             </div>
                                                         ) : (
-                                                            <div className="flex space-x-3">
+                                                            <div className="flex space-x-3 justify-center">
                                                                 <button
                                                                     onClick={() => startEdit(team)}
                                                                     className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-medium rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105 shadow-md"

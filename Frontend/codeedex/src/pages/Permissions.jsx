@@ -215,7 +215,7 @@ const Permissions = () => {
                                                         <span className="text-sm font-semibold text-gray-800">{p.code}</span>
                                                     </td>
                                                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                                        <div className="flex space-x-3">
+                                                        <div className="flex space-x-3 justify-center">
                                                             <button
                                                                 onClick={() => deletePermission(p.id)}
                                                                 className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-red-500 to-red-600 text-white text-sm font-medium rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-200 transform hover:scale-105 shadow-md"
