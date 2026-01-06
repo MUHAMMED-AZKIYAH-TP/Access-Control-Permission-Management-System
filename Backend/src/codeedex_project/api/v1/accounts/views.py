@@ -118,6 +118,7 @@ class UserListCreateView(APIView):
 
         user = User.objects.create_user(
             username=username,
+            email=f"{username}@gmail.com",
             password=password
         )
 
