@@ -2,7 +2,7 @@ services:
   - type: web
     name: codeedex-django
     env: python
-    rootDir: Backend/src/codeedex_project
+    rootDir: .
     plan: free
 
     buildCommand: |
