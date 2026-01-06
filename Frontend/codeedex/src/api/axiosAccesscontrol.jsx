@@ -1,11 +1,11 @@
 import axios from "axios";
 
 
-const API_BASE_URL = "https://access-control-permission-management-lk8u.onrender.com/api/v1/access/"
+
 
 
 export const apiAccesscontrol = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: "https://access-control-permission-management-lk8u.onrender.com/api/v1/access/"
 });
 
 
