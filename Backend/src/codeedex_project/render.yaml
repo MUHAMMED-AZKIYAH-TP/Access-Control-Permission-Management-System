@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: codeedex-django
+    env: python
+    rootDir: .
+    plan: free
+
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py migrate
+      python manage.py collectstatic --noinput
+
+    startCommand: |
+      python manage.py migrate --noinput
+      python run_superuser.py
+      gunicorn HMS_Django.wsgi:application
+    envVars:
+      - key: ENV
+        value: render
+      - key: DATABASE_URL
+        fromDatabase: true
