@@ -104,50 +104,103 @@ const RolePermissions = () => {
                         {/* Error */}
                         {error && <p className="text-red-500 bg-red-50 p-4 rounded-md mb-6">{error}</p>}
 
-                        {/* Select Role */}
-                        <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-                            <h3 className="text-xl font-semibold text-gray-800 mb-4">Select Role</h3>
-                            <select
-                                value={selectedRole}
-                                onChange={(e) => {
-                                    const roleId = e.target.value;
-                                    setSelectedRole(roleId);
-                                    fetchRolePermissions(roleId);
-                                }}
-                                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            >
-                                <option value="">Select Role</option>
-                                {roles.map(role => (
-                                    <option key={role.id} value={role.id}>
-                                        {role.name}
-                                    </option>
-                                ))}
-                            </select>
+                        {/* Select Role Card */}
+                        <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-white/20 mb-8 hover:shadow-2xl transition-all duration-300">
+                            <div className="flex items-center space-x-3 mb-6">
+                                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-800">Select Role</h3>
+                            </div>
+                            <div className="relative">
+                                <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center">
+                                    <svg className="w-4 h-4 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                    Choose a Role
+                                </label>
+                                <div className="relative">
+                                    <select
+                                        value={selectedRole}
+                                        onChange={(e) => {
+                                            const roleId = e.target.value;
+                                            setSelectedRole(roleId);
+                                            fetchRolePermissions(roleId);
+                                        }}
+                                        className="w-full px-4 py-3 pl-12 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-gray-50/50 hover:bg-white appearance-none"
+                                    >
+                                        <option value="">Select Role</option>
+                                        {roles.map(role => (
+                                            <option key={role.id} value={role.id}>
+                                                {role.name}
+                                            </option>
+                                        ))}
+                                    </select>
+                                    <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                        </svg>
+                                    </div>
+                                    <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        {/* Permissions */}
+                        {/* Permissions Card */}
                         {selectedRole && (
-                            <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-                                <h3 className="text-xl font-semibold text-gray-800 mb-4">Permissions</h3>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-white/20 mb-8 hover:shadow-2xl transition-all duration-300">
+                                <div className="flex items-center space-x-3 mb-6">
+                                    <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-teal-600 rounded-xl flex items-center justify-center">
+                                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                        </svg>
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-gray-800">Manage Permissions</h3>
+                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                                     {permissions.map(perm => (
-                                        <div key={perm.id} className="flex items-center">
+                                        <div key={perm.id} className="flex items-center p-4 bg-gray-50/50 rounded-xl hover:bg-gray-100/50 transition-all duration-200">
                                             <input
                                                 type="checkbox"
                                                 checked={selectedPermissions.includes(perm.id)}
                                                 onChange={() => togglePermission(perm.id)}
-                                                className="mr-3"
+                                                className="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
                                             />
-                                            <label className="text-gray-700">{perm.code}</label>
+                                            <label className="ml-3 text-gray-700 font-medium cursor-pointer">
+                                                {perm.code}
+                                            </label>
                                         </div>
                                     ))}
                                 </div>
                                 <button
                                     onClick={assignPermissions}
                                     disabled={loading}
-                                    className="mt-6 bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400"
+                                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-xl hover:from-blue-700 hover:to-purple-700 disabled:from-gray-400 disabled:to-gray-500 transition-all duration-200 transform hover:scale-105 disabled:hover:scale-100 shadow-lg font-medium"
                                 >
-                                    {loading ? "Assigning..." : "Assign Permissions"}
+                                    <div className="flex items-center justify-center space-x-2">
+                                        {loading ? (
+                                            <>
+                                                <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+                                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                                </svg>
+                                                <span>Assigning Permissions...</span>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                                </svg>
+                                                <span>Assign Permissions</span>
+                                            </>
+                                        )}
+                                    </div>
                                 </button>
                             </div>
                         )}

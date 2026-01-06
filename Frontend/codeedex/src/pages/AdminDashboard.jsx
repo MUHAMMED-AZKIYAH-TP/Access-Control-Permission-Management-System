@@ -45,19 +45,175 @@ const AdminDashboard = () => {
 
                 {/* Main Content */}
                 <div className="p-8">
-                    <div className="max-w-4xl mx-auto">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <Link to="/admin/users" className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                                <h3 className="text-xl font-semibold text-blue-600 mb-2">Users</h3>
-                                <p className="text-gray-600">Manage user accounts</p>
+                    <div className="max-w-6xl mx-auto">
+                        {/* Welcome Section */}
+                        <div className="text-center mb-12">
+                            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl shadow-xl mb-6">
+                                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </div>
+                            <h2 className="text-4xl font-bold text-gray-800 mb-4">Welcome to Admin Dashboard</h2>
+                            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Manage your access control system with powerful tools for users, roles, permissions, and teams</p>
+                        </div>
+
+                        {/* Stats Overview */}
+                        <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-white/20 mb-12 hover:shadow-2xl transition-all duration-300">
+                            <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">System Overview</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                                <div className="text-center">
+                                    <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="text-3xl font-bold text-gray-800">0</h4>
+                                    <p className="text-gray-600">Total Users</p>
+                                </div>
+                                <div className="text-center">
+                                    <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="text-3xl font-bold text-gray-800">0</h4>
+                                    <p className="text-gray-600">Total Teams</p>
+                                </div>
+                                <div className="text-center">
+                                    <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="text-3xl font-bold text-gray-800">0</h4>
+                                    <p className="text-gray-600">Total Roles</p>
+                                </div>
+                                <div className="text-center">
+                                    <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="text-3xl font-bold text-gray-800">0</h4>
+                                    <p className="text-gray-600">Total Permissions</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Management Cards */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <Link to="/users" className="group bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-white/20 hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                                <div className="flex items-center justify-between mb-6">
+                                    <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                                        </svg>
+                                    </div>
+                                    <div className="text-4xl opacity-20 group-hover:opacity-40 transition-opacity">👥</div>
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-800 mb-3">Users</h3>
+                                <p className="text-gray-600 text-lg leading-relaxed">Create, edit, and manage system user accounts with secure authentication</p>
+                                <div className="mt-6 flex items-center text-blue-600 font-semibold group-hover:text-blue-700 transition-colors">
+                                    <span>Manage Users</span>
+                                    <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </div>
                             </Link>
-                            <Link to="/admin/roles" className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                                <h3 className="text-xl font-semibold text-green-600 mb-2">Roles</h3>
-                                <p className="text-gray-600">Define and manage roles</p>
+
+                            <Link to="/roles" className="group bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-white/20 hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                                <div className="flex items-center justify-between mb-6">
+                                    <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                        </svg>
+                                    </div>
+                                    <div className="text-4xl opacity-20 group-hover:opacity-40 transition-opacity">🔐</div>
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-800 mb-3">Roles</h3>
+                                <p className="text-gray-600 text-lg leading-relaxed">Define and organize user roles to control access levels and permissions</p>
+                                <div className="mt-6 flex items-center text-green-600 font-semibold group-hover:text-green-700 transition-colors">
+                                    <span>Manage Roles</span>
+                                    <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </div>
                             </Link>
-                            <Link to="/admin/audit" className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                                <h3 className="text-xl font-semibold text-purple-600 mb-2">Audit Logs</h3>
-                                <p className="text-gray-600">View system audit logs</p>
+
+                            <Link to="/permissions" className="group bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-white/20 hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                                <div className="flex items-center justify-between mb-6">
+                                    <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                        </svg>
+                                    </div>
+                                    <div className="text-4xl opacity-20 group-hover:opacity-40 transition-opacity">🔑</div>
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-800 mb-3">Permissions</h3>
+                                <p className="text-gray-600 text-lg leading-relaxed">Configure granular permissions for fine-tuned access control</p>
+                                <div className="mt-6 flex items-center text-purple-600 font-semibold group-hover:text-purple-700 transition-colors">
+                                    <span>Manage Permissions</span>
+                                    <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </div>
+                            </Link>
+
+                            <Link to="/teams" className="group bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-white/20 hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                                <div className="flex items-center justify-between mb-6">
+                                    <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                        </svg>
+                                    </div>
+                                    <div className="text-4xl opacity-20 group-hover:opacity-40 transition-opacity">👥</div>
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-800 mb-3">Teams</h3>
+                                <p className="text-gray-600 text-lg leading-relaxed">Organize users into collaborative teams for better management</p>
+                                <div className="mt-6 flex items-center text-indigo-600 font-semibold group-hover:text-indigo-700 transition-colors">
+                                    <span>Manage Teams</span>
+                                    <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </div>
+                            </Link>
+
+                            <Link to="/audit" className="group bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-white/20 hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                                <div className="flex items-center justify-between mb-6">
+                                    <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                                        </svg>
+                                    </div>
+                                    <div className="text-4xl opacity-20 group-hover:opacity-40 transition-opacity">📊</div>
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-800 mb-3">Audit Logs</h3>
+                                <p className="text-gray-600 text-lg leading-relaxed">Monitor and review all system activities and access logs</p>
+                                <div className="mt-6 flex items-center text-orange-600 font-semibold group-hover:text-orange-700 transition-colors">
+                                    <span>View Audit Logs</span>
+                                    <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </div>
+                            </Link>
+
+                            <Link to="/role-permissions" className="group bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-white/20 hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                                <div className="flex items-center justify-between mb-6">
+                                    <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                        </svg>
+                                    </div>
+                                    <div className="text-4xl opacity-20 group-hover:opacity-40 transition-opacity">⚙️</div>
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-800 mb-3">Role Permissions</h3>
+                                <p className="text-gray-600 text-lg leading-relaxed">Assign permissions to roles for comprehensive access control</p>
+                                <div className="mt-6 flex items-center text-teal-600 font-semibold group-hover:text-teal-700 transition-colors">
+                                    <span>Configure Access</span>
+                                    <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </div>
                             </Link>
                         </div>
                     </div>
