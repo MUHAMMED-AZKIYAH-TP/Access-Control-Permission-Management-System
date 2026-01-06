@@ -13,7 +13,7 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     try {
-      const res = await api.post("/token/", {
+      const res = await api.post("token/", {
         username: data.username,
         password: data.password,
       });
