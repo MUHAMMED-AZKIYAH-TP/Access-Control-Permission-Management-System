@@ -26,4 +26,4 @@ class User(AbstractUser):
         ordering = ["-id"]
         
     def __str__(self):
-        return self.team.name
+        return self.username

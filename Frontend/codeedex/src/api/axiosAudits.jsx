@@ -19,7 +19,7 @@ apiAudit.interceptors.request.use(
 );
 
 
-apiDailyTask.interceptors.response.use(
+apiAudit.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {

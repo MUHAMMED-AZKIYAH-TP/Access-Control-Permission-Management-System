@@ -1,20 +1,26 @@
+from django.utils import timezone
+
+
 def has_permission(user, permission_code, target_user=None):
-    if not user.is_authenticated:
+    if not user or not user.is_authenticated:
         return False
 
-    # Role-based permissions
-    role_permissions = set()
-    for ur in user.userrole_set.all():
-        if ur.is_active():
-            role_permissions.update(
-                ur.role.permissions.values_list("code", flat=True)
-            )
+    now = timezone.now()
 
-    if permission_code in role_permissions:
-        return True
+    # -------------------------
+    # ROLE-BASED PERMISSIONS
+    # -------------------------
+    for ur in user.user_roles.all():   # ✅ FIXED
+        if not ur.is_active():
+            continue
 
-    # Direct permissions
-    for pa in user.permissionassignment_set.all():
+        if ur.role.permissions.filter(code=permission_code).exists():
+            return True
+
+    # -------------------------
+    # DIRECT PERMISSIONS
+    # -------------------------
+    for pa in user.direct_permissions.all():  # ✅ FIXED
         if pa.permission.code != permission_code:
             continue
 
@@ -24,7 +30,7 @@ def has_permission(user, permission_code, target_user=None):
         if pa.scope == "self" and target_user == user:
             return True
 
-        if pa.scope == "team" and target_user.team == user.team:
+        if pa.scope == "team" and target_user and target_user.team == user.team:
             return True
 
     return False
