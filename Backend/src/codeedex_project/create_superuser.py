@@ -6,17 +6,20 @@ def run():
         print("SUPERUSER_CREATE not enabled.")
         return
 
-    email = os.getenv("SUPERUSER_EMAIL")
+    username = os.getenv("SUPERUSER_USERNAME")
     password = os.getenv("SUPERUSER_PASSWORD")
 
-    if not email or not password:
-        print("Missing SUPERUSER_EMAIL or SUPERUSER_PASSWORD.")
+    if not username or not password:
+        print("Missing SUPERUSER_USERNAME or SUPERUSER_PASSWORD.")
         return
 
     User = get_user_model()
 
-    if not User.objects.filter(email=email).exists():
-        User.objects.create_superuser(email=email, password=password)
-        print(f"Superuser created: {email}")
+    if not User.objects.filter(username=username).exists():
+        User.objects.create_superuser(
+            username=username,
+            password=password
+        )
+        print(f"✅ Superuser created: {username}")
     else:
-        print(f"Superuser already exists: {email}")
+        print(f"ℹ️ Superuser already exists: {username}")
