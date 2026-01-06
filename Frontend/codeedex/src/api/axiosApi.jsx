@@ -7,7 +7,7 @@ import axios from "axios";
 
 
 const api = axios.create({
-  baseURL: "https://access-control-permission-management-lk8u.onrender.com/api/v1/",
+  baseURL: "https://access-control-permission-management-lk8u.onrender.com/api/",
   headers: {
     "Content-Type": "application/json",
   },
