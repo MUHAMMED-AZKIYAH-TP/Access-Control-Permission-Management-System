@@ -4,12 +4,11 @@ from datetime import timedelta
 from dotenv import load_dotenv
 import dj_database_url
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-load_dotenv(BASE_DIR / ".env")
-
-
+# -------------------------
+# ENV LOADING
+# -------------------------
 ENV = os.getenv("ENV", "local")
 
 if ENV == "render":
@@ -17,24 +16,26 @@ if ENV == "render":
 else:
     load_dotenv(".env.local")
 
-
-
-
+# -------------------------
+# SECURITY
+# -------------------------
+SECRET_KEY = os.getenv("SECRET_KEY", "unsafe-secret-key")
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
 RENDER_EXTERNAL_HOSTNAME = os.getenv("RENDER_EXTERNAL_HOSTNAME")
 
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    ".onrender.com",
+]
+
 if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS = [RENDER_EXTERNAL_HOSTNAME]
-else:
-    ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
-SECRET_KEY = os.getenv("SECRET_KEY", "unsafe-secret-key")
-
-DEBUG = os.getenv("DEBUG", "False") == "True"
-
-
-
-
+# -------------------------
+# APPLICATIONS
+# -------------------------
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -42,20 +43,18 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    
-   
 
-    
     "rest_framework",
     "corsheaders",
 
-    
     "accounts",
     "access_control",
     "audit",
 ]
 
-
+# -------------------------
+# MIDDLEWARE
+# -------------------------
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
@@ -67,6 +66,9 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+# -------------------------
+# TEMPLATES
+# -------------------------
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -83,24 +85,18 @@ TEMPLATES = [
     },
 ]
 
-
-
-FRONTEND_URL = os.getenv("FRONTEND_URL")
-
-CORS_ALLOW_CREDENTIALS = True
-
-CORS_ALLOWED_ORIGINS = [FRONTEND_URL] if FRONTEND_URL else []
-
-CSRF_TRUSTED_ORIGINS = [FRONTEND_URL] if FRONTEND_URL else []
-
-
-
-
+# -------------------------
+# DATABASE
+# -------------------------
 DATABASE_URL = os.getenv("DATABASE_URL")
+
 if DATABASE_URL:
-    # Render / Production
     DATABASES = {
-        "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=600, ssl_require=True)
+        "default": dj_database_url.config(
+            default=DATABASE_URL,
+            conn_max_age=600,
+            ssl_require=True,
+        )
     }
 else:
     DATABASES = {
@@ -114,9 +110,10 @@ else:
         }
     }
 
-
+# -------------------------
+# AUTH
+# -------------------------
 AUTH_USER_MODEL = "accounts.User"
-
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
@@ -133,35 +130,34 @@ SIMPLE_JWT = {
     "AUTH_HEADER_TYPES": ("Bearer",),
 }
 
+# -------------------------
+# CORS & CSRF (VERY IMPORTANT)
+# -------------------------
+CORS_ALLOW_CREDENTIALS = True
 
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-    },
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "https://your-vercel-app.vercel.app",  
 ]
 
-ROOT_URLCONF = "codeedex_project.urls"
-WSGI_APPLICATION = "codeedex_project.wsgi.application"
+CSRF_TRUSTED_ORIGINS = CORS_ALLOWED_ORIGINS
 
+# -------------------------
+# STATIC FILES
+# -------------------------
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
+# -------------------------
+# GENERAL
+# -------------------------
+ROOT_URLCONF = "codeedex_project.urls"
+WSGI_APPLICATION = "codeedex_project.wsgi.application"
 
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "Asia/Kolkata"
 USE_I18N = True
 USE_TZ = True
 
-
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-    "https://your-vercel-app.vercel.app",
-]
-
