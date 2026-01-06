@@ -1,7 +1,7 @@
 import os
 import django
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "HMS_Django.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "codeedex_project.settings")
 django.setup()
 
 from create_superuser import run

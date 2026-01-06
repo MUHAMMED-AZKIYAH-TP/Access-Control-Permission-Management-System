@@ -206,15 +206,7 @@ Required permissions for actions:
 - Audit logging for accountability
 - Password validation and secure user creation
 
-## Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes following the existing code style
-4. Test your changes thoroughly
-5. Commit your changes (`git commit -m 'Add amazing feature'`)
-6. Push to the branch (`git push origin feature/amazing-feature`)
-7. Open a Pull Request
 
 ## Future Enhancements
 
@@ -226,6 +218,13 @@ Required permissions for actions:
 - Two-factor authentication
 - Dashboard analytics and reporting
 
-## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+
+
+
+
+
+
+## Admin Details
+SUPERUSER_EMAIL=Codeedex@admin.in
+SUPERUSER_PASSWORD=123456Aa@
