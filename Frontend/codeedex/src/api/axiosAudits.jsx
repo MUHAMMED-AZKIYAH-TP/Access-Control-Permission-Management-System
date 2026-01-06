@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const API_BASE_URL =  "https://access-control-permission-management-system.onrender.com/api/v1/audit/"
+const API_BASE_URL =  "https://access-control-permission-management-lk8u.onrender.com/api/v1/audit/"
 
 
 export const apiAudit = axios.create({
