@@ -50,16 +50,16 @@ const Permissions = () => {
             <Navbar />
 
             {/* DASHBOARD WRAPPER */}
-            <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 ml-64">
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 lg:ml-64">
 
                 {/* HEADER */}
-                <header className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 px-8 py-6 flex justify-between items-center shadow-lg">
-                    <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                            <span className="text-white text-xl font-bold">🔐</span>
+                <header className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 px-4 sm:px-6 lg:px-8 py-4 lg:py-6 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 sm:space-y-0 shadow-lg">
+                    <div className="flex items-center space-x-3 lg:space-x-4">
+                        <div className="w-10 h-10 lg:w-12 lg:h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                            <span className="text-white text-lg lg:text-xl font-bold">🔐</span>
                         </div>
                         <div>
-                            <h1 className="text-3xl font-bold text-white">
+                            <h1 className="text-2xl sm:text-3xl font-bold text-white">
                                 Permission Management
                             </h1>
                             <p className="text-sm text-blue-100">
@@ -68,12 +68,12 @@ const Permissions = () => {
                         </div>
                     </div>
 
-                    <div className="flex items-center space-x-4">
-                        <div className="flex items-center space-x-3 bg-white/10 rounded-xl px-4 py-2">
-                            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-indigo-600 font-bold">
+                    <div className="flex items-center space-x-3 lg:space-x-4">
+                        <div className="flex items-center space-x-2 lg:space-x-3 bg-white/10 rounded-xl px-3 lg:px-4 py-2">
+                            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-white rounded-full flex items-center justify-center text-indigo-600 font-bold shadow-md text-sm lg:text-base">
                                 A
                             </div>
-                            <div>
+                            <div className="hidden sm:block">
                                 <p className="text-sm font-semibold text-white">Admin User</p>
                                 <p className="text-xs text-blue-100">Administrator</p>
                             </div>
@@ -82,8 +82,8 @@ const Permissions = () => {
                 </header>
 
                 {/* MAIN CONTENT */}
-                <main className="p-8">
-                    <div className="max-w-4xl mx-auto">
+                <main className="p-4 sm:p-6 lg:p-8">
+                    <div className="max-w-6xl mx-auto">
 
                         {error && (
                             <p className="text-red-500 bg-red-50 p-4 rounded-md mb-6">
@@ -92,47 +92,47 @@ const Permissions = () => {
                         )}
 
                         {/* Stats Card */}
-                        <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-white/20 mb-8 hover:shadow-2xl transition-all duration-300">
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="bg-white/80 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-xl border border-white/20 mb-6 lg:mb-8 hover:shadow-2xl transition-all duration-300">
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
                                 <div className="text-center">
                                     <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                                         <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                         </svg>
                                     </div>
-                                    <h4 className="text-2xl font-bold text-gray-800">{permissions.length}</h4>
-                                    <p className="text-gray-600">Total Permissions</p>
+                                    <h4 className="text-xl sm:text-2xl font-bold text-gray-800">{permissions.length}</h4>
+                                    <p className="text-gray-600 text-sm sm:text-base">Total Permissions</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-3 lg:mb-4 shadow-lg">
+                                        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                     </div>
-                                    <h4 className="text-2xl font-bold text-gray-800">{permissions.filter(p => p.is_active !== false).length}</h4>
-                                    <p className="text-gray-600">Active Permissions</p>
+                                    <h4 className="text-xl sm:text-2xl font-bold text-gray-800">{permissions.filter(p => p.is_active !== false).length}</h4>
+                                    <p className="text-gray-600 text-sm sm:text-base">Active Permissions</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-3 lg:mb-4 shadow-lg">
+                                        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                     </div>
-                                    <h4 className="text-2xl font-bold text-gray-800">0</h4>
-                                    <p className="text-gray-600">Pending Actions</p>
+                                    <h4 className="text-xl sm:text-2xl font-bold text-gray-800">0</h4>
+                                    <p className="text-gray-600 text-sm sm:text-base">Pending Actions</p>
                                 </div>
                             </div>
                         </div>
 
                         {/* CREATE PERMISSION */}
-                        <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-white/20 mb-8 hover:shadow-2xl transition-all duration-300">
-                            <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="bg-white/80 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-2xl shadow-xl border border-white/20 mb-6 lg:mb-8 hover:shadow-2xl transition-all duration-300">
+                            <div className="flex items-center space-x-2 lg:space-x-3 mb-4 lg:mb-6">
+                                <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                                    <svg className="w-4 h-4 lg:w-5 lg:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                                     </svg>
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-800">Create New Permission</h3>
+                                <h3 className="text-xl lg:text-2xl font-bold text-gray-800">Create New Permission</h3>
                             </div>
 
                             <div className="space-y-6">
@@ -179,14 +179,14 @@ const Permissions = () => {
                         </div>
 
                         {/* PERMISSIONS LIST */}
-                        <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300">
-                            <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-teal-600 rounded-xl flex items-center justify-center">
-                                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="bg-white/80 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-2xl shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300">
+                            <div className="flex items-center space-x-2 lg:space-x-3 mb-4 lg:mb-6">
+                                <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-r from-green-500 to-teal-600 rounded-xl flex items-center justify-center">
+                                    <svg className="w-4 h-4 lg:w-5 lg:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                                     </svg>
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-800">Existing Permissions</h3>
+                                <h3 className="text-xl lg:text-2xl font-bold text-gray-800">Existing Permissions</h3>
                             </div>
 
                             {permissions.length === 0 ? (
@@ -198,29 +198,29 @@ const Permissions = () => {
                                     <p className="text-gray-400 text-sm">Create your first permission above</p>
                                 </div>
                             ) : (
-                                <div className="overflow-hidden rounded-xl border border-gray-200">
-                                    <table className="w-full">
+                                <div className="overflow-x-auto rounded-xl border border-gray-200">
+                                    <table className="w-full min-w-full">
                                         <thead className="bg-gradient-to-r from-gray-50 to-gray-100">
                                             <tr>
-                                                <th className="px-6 py-4 text-xs font-semibold text-gray-600 uppercase tracking-wider">ID</th>
-                                                <th className="px-6 py-4 text-xs font-semibold text-gray-600 uppercase tracking-wider">Code</th>
-                                                <th className="px-6 py-4 text-xs font-semibold text-gray-600 uppercase tracking-wider">Actions</th>
+                                                <th className="px-3 sm:px-6 py-3 lg:py-4 text-xs font-semibold text-gray-600 uppercase tracking-wider">ID</th>
+                                                <th className="px-3 sm:px-6 py-3 lg:py-4 text-xs font-semibold text-gray-600 uppercase tracking-wider">Code</th>
+                                                <th className="px-3 sm:px-6 py-3 lg:py-4 text-xs font-semibold text-gray-600 uppercase tracking-wider">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody className="divide-y divide-gray-200">
                                             {permissions.map((p, index) => (
                                                 <tr key={p.id} className={`hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-200 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}`}>
-                                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{p.id}</td>
-                                                    <td className="px-6 py-4 whitespace-nowrap">
+                                                    <td className="px-3 sm:px-6 py-3 lg:py-4 whitespace-nowrap text-sm font-medium text-gray-900">{p.id}</td>
+                                                    <td className="px-3 sm:px-6 py-3 lg:py-4 whitespace-nowrap">
                                                         <span className="text-sm font-semibold text-gray-800">{p.code}</span>
                                                     </td>
-                                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                                        <div className="flex space-x-3 justify-center">
+                                                    <td className="px-3 sm:px-6 py-3 lg:py-4 whitespace-nowrap text-sm font-medium">
+                                                        <div className="flex justify-center">
                                                             <button
                                                                 onClick={() => deletePermission(p.id)}
-                                                                className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-red-500 to-red-600 text-white text-sm font-medium rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-200 transform hover:scale-105 shadow-md"
+                                                                className="inline-flex items-center px-2 sm:px-3 lg:px-4 py-2 bg-gradient-to-r from-red-500 to-red-600 text-white text-xs sm:text-sm font-medium rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-200 transform hover:scale-105 shadow-md"
                                                             >
-                                                                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                                                 </svg>
                                                                 Delete

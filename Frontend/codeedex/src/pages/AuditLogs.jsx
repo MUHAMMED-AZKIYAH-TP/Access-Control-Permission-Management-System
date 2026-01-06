@@ -16,30 +16,30 @@ const AuditLogs = () => {
             <Navbar />
 
             {/* DASHBOARD WRAPPER */}
-            <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 ml-64">
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 lg:ml-64">
 
                 {/* HEADER */}
-                <header className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 px-8 py-6 flex justify-between items-center shadow-lg">
-                    <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <header className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 px-4 sm:px-6 lg:px-8 py-4 lg:py-6 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 sm:space-y-0 shadow-lg">
+                    <div className="flex items-center space-x-3 lg:space-x-4">
+                        <div className="w-10 h-10 lg:w-12 lg:h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                            <svg className="w-5 h-5 lg:w-6 lg:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                                     d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2" />
                             </svg>
                         </div>
                         <div>
-                            <h1 className="text-3xl font-bold text-white">Audit Logs</h1>
+                            <h1 className="text-2xl sm:text-3xl font-bold text-white">Audit Logs</h1>
                             <p className="text-sm text-blue-100">
                                 Monitor system activities and user actions
                             </p>
                         </div>
                     </div>
 
-                    <div className="flex items-center space-x-3 bg-white/10 rounded-xl px-4 py-2">
-                        <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-indigo-600 font-bold">
+                    <div className="flex items-center space-x-2 lg:space-x-3 bg-white/10 rounded-xl px-3 lg:px-4 py-2">
+                        <div className="w-8 h-8 lg:w-10 lg:h-10 bg-white rounded-full flex items-center justify-center text-indigo-600 font-bold shadow-md text-sm lg:text-base">
                             A
                         </div>
-                        <div>
+                        <div className="hidden sm:block">
                             <p className="text-sm font-semibold text-white">Admin User</p>
                             <p className="text-xs text-blue-100">Administrator</p>
                         </div>
@@ -47,12 +47,12 @@ const AuditLogs = () => {
                 </header>
 
                 {/* MAIN CONTENT */}
-                <main className="p-8">
+                <main className="p-4 sm:p-6 lg:p-8">
                     <div className="max-w-6xl mx-auto">
 
                         {/* Stats Card */}
-                        <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-white/20 mb-8 hover:shadow-2xl transition-all duration-300">
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="bg-white/80 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-2xl shadow-xl border border-white/20 mb-6 lg:mb-8 hover:shadow-2xl transition-all duration-300">
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
                                 <div className="text-center">
                                     <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                                         <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -84,14 +84,14 @@ const AuditLogs = () => {
                         </div>
 
                         {/* Audit Logs Card */}
-                        <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300">
-                            <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-teal-600 rounded-xl flex items-center justify-center">
-                                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="bg-white/80 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-2xl shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300">
+                            <div className="flex items-center space-x-2 lg:space-x-3 mb-4 lg:mb-6">
+                                <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-r from-green-500 to-teal-600 rounded-xl flex items-center justify-center">
+                                    <svg className="w-4 h-4 lg:w-5 lg:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                                     </svg>
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-800">Audit Logs</h3>
+                                <h3 className="text-xl lg:text-2xl font-bold text-gray-800">Audit Logs</h3>
                             </div>
 
                             {logs.length === 0 ? (
@@ -104,7 +104,8 @@ const AuditLogs = () => {
                                 </div>
                             ) : (
                                 <div className="overflow-hidden rounded-xl border border-gray-200">
-                                    <table className="w-full">
+                                    <div className="overflow-x-auto">
+                                        <table className="w-full min-w-full">
                                         <thead className="bg-gradient-to-r from-gray-50 to-gray-100">
                                             <tr>
                                                 <th className="px-6 py-4 text-xs font-semibold text-gray-600 uppercase tracking-wider">ID</th>
@@ -134,6 +135,7 @@ const AuditLogs = () => {
                                             ))}
                                         </tbody>
                                     </table>
+                                    </div>
                                 </div>
                             )}
                         </div>

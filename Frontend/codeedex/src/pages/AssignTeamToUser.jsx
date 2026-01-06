@@ -39,16 +39,16 @@ const AssignTeamToUser = () => {
             <Navbar />
 
             {/* DASHBOARD WRAPPER */}
-            <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 ml-64">
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 lg:ml-64">
 
                 {/* HEADER */}
-                <header className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 px-8 py-6 flex justify-between items-center shadow-lg">
-                    <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                            <span className="text-white text-xl">👥</span>
+                <header className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 px-4 sm:px-6 lg:px-8 py-4 lg:py-6 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 sm:space-y-0 shadow-lg">
+                    <div className="flex items-center space-x-3 lg:space-x-4">
+                        <div className="w-10 h-10 lg:w-12 lg:h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                            <span className="text-white text-lg lg:text-xl">👥</span>
                         </div>
                         <div>
-                            <h1 className="text-3xl font-bold text-white">
+                            <h1 className="text-2xl sm:text-3xl font-bold text-white">
                                 Assign Team to User
                             </h1>
                             <p className="text-sm text-blue-100">
@@ -57,11 +57,11 @@ const AssignTeamToUser = () => {
                         </div>
                     </div>
 
-                    <div className="flex items-center space-x-3 bg-white/10 rounded-xl px-4 py-2">
-                        <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-indigo-600 font-bold">
+                    <div className="flex items-center space-x-2 lg:space-x-3 bg-white/10 rounded-xl px-3 lg:px-4 py-2">
+                        <div className="w-8 h-8 lg:w-10 lg:h-10 bg-white rounded-full flex items-center justify-center text-indigo-600 font-bold shadow-md text-sm lg:text-base">
                             A
                         </div>
-                        <div>
+                        <div className="hidden sm:block">
                             <p className="text-sm font-semibold text-white">Admin User</p>
                             <p className="text-xs text-blue-100">Administrator</p>
                         </div>
@@ -69,20 +69,20 @@ const AssignTeamToUser = () => {
                 </header>
 
                 {/* MAIN CONTENT */}
-                <main className="p-8">
-                    <div className="max-w-4xl mx-auto">
+                <main className="p-4 sm:p-6 lg:p-8">
+                    <div className="max-w-4xl lg:max-w-6xl mx-auto">
                         {/* Assign Team Card */}
-                        <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-white/20 mb-8 hover:shadow-2xl transition-all duration-300">
-                            <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="bg-white/80 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-2xl shadow-xl border border-white/20 mb-6 lg:mb-8 hover:shadow-2xl transition-all duration-300">
+                            <div className="flex items-center space-x-2 lg:space-x-3 mb-4 lg:mb-6">
+                                <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                                    <svg className="w-4 h-4 lg:w-5 lg:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                                     </svg>
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-800">Assign Team to User</h3>
+                                <h3 className="text-xl lg:text-2xl font-bold text-gray-800">Assign Team to User</h3>
                             </div>
 
-                            <div className="space-y-6">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
                                 <div className="relative">
                                     <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center">
                                         <svg className="w-4 h-4 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -149,30 +149,32 @@ const AssignTeamToUser = () => {
                                     </div>
                                 </div>
 
-                                <button
-                                    onClick={assignTeam}
-                                    disabled={loading}
-                                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-xl hover:from-blue-700 hover:to-purple-700 disabled:from-gray-400 disabled:to-gray-500 transition-all duration-200 transform hover:scale-105 disabled:hover:scale-100 shadow-lg font-medium"
-                                >
-                                    <div className="flex items-center justify-center space-x-2">
-                                        {loading ? (
-                                            <>
-                                                <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
-                                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                                </svg>
-                                                <span>Assigning Team...</span>
-                                            </>
-                                        ) : (
-                                            <>
-                                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                                                </svg>
-                                                <span>Assign Team</span>
-                                            </>
-                                        )}
-                                    </div>
-                                </button>
+                                <div className="mt-6 lg:mt-8">
+                                    <button
+                                        onClick={assignTeam}
+                                        disabled={loading}
+                                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-xl hover:from-blue-700 hover:to-purple-700 disabled:from-gray-400 disabled:to-gray-500 transition-all duration-200 transform hover:scale-105 disabled:hover:scale-100 shadow-lg font-medium"
+                                    >
+                                        <div className="flex items-center justify-center space-x-2">
+                                            {loading ? (
+                                                <>
+                                                    <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+                                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                                    </svg>
+                                                    <span>Assigning Team...</span>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                    </svg>
+                                                    <span>Assign Team</span>
+                                                </>
+                                            )}
+                                        </div>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -21,28 +21,28 @@ const Home = () => {
     return (
         <>
             <Navbar />
-            <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50  ml-64">
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 lg:ml-64">
                 {/* Header */}
-                <header className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 shadow-lg border-b border-indigo-200 px-8 py-6 flex justify-between items-center">
-                    <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <header className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 shadow-lg border-b border-indigo-200 px-4 sm:px-6 lg:px-8 py-4 lg:py-6 flex justify-between items-center">
+                    <div className="flex items-center space-x-3 lg:space-x-4">
+                        <div className="w-10 h-10 lg:w-12 lg:h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                            <svg className="w-5 h-5 lg:w-6 lg:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5a2 2 0 012-2h4a2 2 0 012 2v2H8V5z" />
                             </svg>
                         </div>
                         <div>
-                            <h1 className="text-3xl font-bold text-white">Dashboard</h1>
-                            <p className="text-sm text-blue-100">Welcome back to your control panel</p>
+                            <h1 className="text-2xl lg:text-3xl font-bold text-white">Dashboard</h1>
+                            <p className="text-xs lg:text-sm text-blue-100">Welcome back to your control panel</p>
                         </div>
                     </div>
-                    <div className="flex items-center space-x-4">
-                        <div className="flex items-center space-x-3 bg-white/10 rounded-xl px-4 py-2">
-                            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-indigo-600 font-bold shadow-md">
+                    <div className="flex items-center space-x-2 lg:space-x-4">
+                        <div className="flex items-center space-x-2 lg:space-x-3 bg-white/10 rounded-xl px-3 lg:px-4 py-2">
+                            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-white rounded-full flex items-center justify-center text-indigo-600 font-bold shadow-md">
                                 A
                             </div>
-                            <div>
-                                <p className="text-sm font-semibold text-white">Admin User</p>
+                            <div className="hidden sm:block">
+                                <p className="text-xs lg:text-sm font-semibold text-white">Admin User</p>
                                 <p className="text-xs text-blue-100">Administrator</p>
                             </div>
                         </div>
@@ -50,31 +50,31 @@ const Home = () => {
                 </header>
 
                 {/* Main Content */}
-                <div className="p-8">
+                <div className="p-4 sm:p-6 lg:p-8">
                     <div className="max-w-7xl mx-auto">
                         {/* Welcome Section */}
-                        <div className="text-center mb-12">
-                            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl shadow-xl mb-6">
-                                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="text-center mb-8 lg:mb-12">
+                            <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl shadow-xl mb-4 lg:mb-6">
+                                <svg className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z" />
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5a2 2 0 012-2h4a2 2 0 012 2v2H8V5z" />
                                 </svg>
                             </div>
-                            <h2 className="text-4xl font-bold text-gray-800 mb-4">Welcome to Access Control System</h2>
-                            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Your current permissions and system overview</p>
+                            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-2 lg:mb-4">Welcome to Access Control System</h2>
+                            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-4">Your current permissions and system overview</p>
                         </div>
 
                         {/* Permissions Cards */}
-                        <div className="mb-12">
-                            <div className="flex items-center space-x-3 mb-8">
-                                <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-teal-600 rounded-xl flex items-center justify-center">
-                                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="mb-8 lg:mb-12">
+                            <div className="flex items-center space-x-2 lg:space-x-3 mb-6 lg:mb-8">
+                                <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-r from-green-500 to-teal-600 rounded-xl flex items-center justify-center">
+                                    <svg className="w-4 h-4 lg:w-5 lg:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                     </svg>
                                 </div>
-                                <h3 className="text-3xl font-bold text-gray-800">Your Permissions</h3>
+                                <h3 className="text-xl lg:text-3xl font-bold text-gray-800">Your Permissions</h3>
                             </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
                                 {Permissions.map((permission, index) => {
                                     // Define colors for different permission types
                                     const getPermissionStyle = (perm) => {
@@ -127,58 +127,58 @@ const Home = () => {
 
                         {/* System Overview Cards */}
                         <div>
-                            <div className="flex items-center space-x-3 mb-8">
-                                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="flex items-center space-x-2 lg:space-x-3 mb-6 lg:mb-8">
+                                <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                                    <svg className="w-4 h-4 lg:w-5 lg:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                                     </svg>
                                 </div>
-                                <h3 className="text-3xl font-bold text-gray-800">System Overview</h3>
+                                <h3 className="text-xl lg:text-3xl font-bold text-gray-800">System Overview</h3>
                             </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-8 rounded-3xl shadow-xl text-white hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                                    <div className="flex items-center justify-between mb-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+                                <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-4 sm:p-6 lg:p-8 rounded-2xl lg:rounded-3xl shadow-xl text-white hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                                    <div className="flex items-center justify-between mb-3 lg:mb-4">
                                         <div>
-                                            <h3 className="text-2xl font-bold">Users</h3>
-                                            <p className="text-blue-100 opacity-90">Manage system users</p>
+                                            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold">Users</h3>
+                                            <p className="text-blue-100 opacity-90 text-sm lg:text-base">Manage system users</p>
                                         </div>
-                                        <div className="text-5xl opacity-80">👥</div>
+                                        <div className="text-3xl sm:text-4xl lg:text-5xl opacity-80">👥</div>
                                     </div>
                                     <div className="flex items-center text-blue-100">
-                                        <span className="text-sm">Access user management</span>
-                                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <span className="text-xs sm:text-sm">Access user management</span>
+                                        <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                         </svg>
                                     </div>
                                 </div>
 
-                                <div className="bg-gradient-to-br from-green-500 to-green-600 p-8 rounded-3xl shadow-xl text-white hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                                    <div className="flex items-center justify-between mb-4">
+                                <div className="bg-gradient-to-br from-green-500 to-green-600 p-4 sm:p-6 lg:p-8 rounded-2xl lg:rounded-3xl shadow-xl text-white hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                                    <div className="flex items-center justify-between mb-3 lg:mb-4">
                                         <div>
-                                            <h3 className="text-2xl font-bold">Roles & Permissions</h3>
-                                            <p className="text-green-100 opacity-90">Define access control</p>
+                                            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold">Roles & Permissions</h3>
+                                            <p className="text-green-100 opacity-90 text-sm lg:text-base">Define access control</p>
                                         </div>
-                                        <div className="text-5xl opacity-80">🔐</div>
+                                        <div className="text-3xl sm:text-4xl lg:text-5xl opacity-80">🔐</div>
                                     </div>
                                     <div className="flex items-center text-green-100">
-                                        <span className="text-sm">Configure permissions</span>
-                                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <span className="text-xs sm:text-sm">Configure permissions</span>
+                                        <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                         </svg>
                                     </div>
                                 </div>
 
-                                <div className="bg-gradient-to-br from-purple-500 to-purple-600 p-8 rounded-3xl shadow-xl text-white hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                                    <div className="flex items-center justify-between mb-4">
+                                <div className="bg-gradient-to-br from-purple-500 to-purple-600 p-4 sm:p-6 lg:p-8 rounded-2xl lg:rounded-3xl shadow-xl text-white hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                                    <div className="flex items-center justify-between mb-3 lg:mb-4">
                                         <div>
-                                            <h3 className="text-2xl font-bold">Audit Logs</h3>
-                                            <p className="text-purple-100 opacity-90">Monitor activities</p>
+                                            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold">Audit Logs</h3>
+                                            <p className="text-purple-100 opacity-90 text-sm lg:text-base">Monitor activities</p>
                                         </div>
-                                        <div className="text-5xl opacity-80">📊</div>
+                                        <div className="text-3xl sm:text-4xl lg:text-5xl opacity-80">📊</div>
                                     </div>
                                     <div className="flex items-center text-purple-100">
-                                        <span className="text-sm">View system logs</span>
-                                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <span className="text-xs sm:text-sm">View system logs</span>
+                                        <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                         </svg>
                                     </div>
